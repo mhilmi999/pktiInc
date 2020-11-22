@@ -26,18 +26,17 @@ class EditorCtl extends CI_Controller
 		}
 		$session_data = $this->session->userdata('logged_in');
 
-		if ($session_data['nama_grup'] != 'editor') {
+		if ($session_data['nama_grup'] != 'peserta') {
 			redirect('welcome/redirecting');
 		}
 
 
-		$this->load->view('common/header_editor', array(
+		$this->load->view('common/header_peserta', array(
 			"nama_user" => $session_data['namalengkap'],
 			"current_role" => $session_data['nama_grup']
 		));
-		$this->load->view('common/topmenu');
-		$this->load->view('common/content');
-		$this->load->view('common/footer');
+		$this->load->view('peserta/index');
+		$this->load->view('common/footer_peserta');
 	}
 
 	public function viewTask()

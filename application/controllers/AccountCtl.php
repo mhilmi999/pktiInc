@@ -87,13 +87,10 @@ class AccountCtl extends CI_Controller
 			//			$peran= $this->account->getPeranUser($id_user);
 			switch ($users[0]['id_grup']) {
 				case 1:
-					redirect('editorCtl');
+					redirect('PesertaCtl/index');
 					break;
 				case 2:
-					redirect('reviewerCtl');
-					break;
-				case 3:
-					redirect('makelaarCtl');
+					redirect('PanitiaCtl');
 					break;
 				default:
 					redirect('welcome');
@@ -166,136 +163,8 @@ class AccountCtl extends CI_Controller
 		session_destroy();
 		redirect("welcome");
 	}
-	/*
-	public function signingUp()
-	{
-		$this->load->helper(array('form', 'url', 'security'));
-		$this->load->model('account');
-		$this->load->library(array('form_validation'));
-
-		$this->form_validation->set_rules(
-			'nama',
-			'Nama',
-			'trim|min_length[2]|max_length[128]|xss_clean'
-		);
-		$this->form_validation->set_rules(
-			'username',
-			'Username',
-			'trim|min_length[2]|max_length[128]|xss_clean'
-		);
-		$this->form_validation->set_rules(
-			'katasandi',
-			'Kata Sandi',
-			'trim|min_length[2]|max_length[128]|xss_clean'
-		);
-		$this->form_validation->set_rules(
-			'email',
-			'Surel',
-			'trim|min_length[2]|max_length[128]|xss_clean'
-		);
-
-		$res = $this->form_validation->run();
-		if ($res == FALSE) {
-			$msg = validation_errors();
-			$this->load->view(
-				'create_account',
-				array('msg' => $msg)
-			);
-			return FALSE;
-		}
-
-
-
-		$config['upload_path']          = './photos/';
-		$config['allowed_types']        = 'gif|jpg|png';
-		$config['max_size']             = 2048;
-		//$config['max_width']            = 150;
-		//$config['max_height']           = 200;
-
-		//		$new_name = time().$_FILES["userfiles"]['name'];
-		//		$config['file_name'] = $new_name;
-
-		$this->load->library('upload', $config);
-		if (!$this->upload->do_upload('userfile')) {   //gagal upload
-			$error = array('error' => $this->upload->display_errors());
-			$this->load->view('common/header');
-			$this->load->view('signup', $error);
-			$this->load->view('common/footer');
-			return;
-		}
-		//berhasil upload
-		$data = array('upload_data' => $this->upload->data());
-		$id_user = $this->account->insertNewUser();
-		$this->load->view('common/header');
-		$this->load->view('signup_success');
-		$this->load->view('common/footer');
-		return;
-	}
-*/
-	public function changerole()
-	{
-		if (!$this->session->userdata('logged_in')) {
-			redirect('welcome/login');
-		}
-		$session_data = $this->session->userdata('logged_in');
-
-		$this->load->helper(array('form', 'url'));
-
-		$this->load->model("account");
-		$user = $this->account->getUser($session_data['id_user']);
-		$roles = $this->account->getRoles($session_data['id_user']);
-
-		if ($session_data['id_grup'] == 1) {
-			$id_user = $session_data['id_user'];
-			$switchidgrup = 2;
-			$this->db->set('id_grup', $switchidgrup);
-			$this->db->where('id_user', $id_user);
-			$this->db->update('member');
-
-			$this->session->set_userdata('logged_in', $sess_array);
-			//ke halaman welcome page yang bersesuaian
-			//			$peran= $this->account->getPeranUser($id_user);
-			switch ($users[0]['id_grup']) {
-				case 1:
-					redirect('editorCtl');
-					break;
-				case 2:
-					redirect('reviewerCtl');
-					break;
-				case 3:
-					redirect('makelaarCtl');
-					break;
-				default:
-					redirect('welcome');
-					break;
-			}
-		} elseif ($session_data['id_grup'] == 2) {
-			$id_user = $session_data['id_user'];
-			$switchidgrup = 1;
-			$this->db->set('id_grup', $switchidgrup);
-			$this->db->where('id_user', $id_user);
-			$this->db->update('member');
-
-			$this->session->set_userdata('logged_in', $sess_array);
-			//ke halaman welcome page yang bersesuaian
-			//			$peran= $this->account->getPeranUser($id_user);
-			switch ($users[0]['id_grup']) {
-				case 1:
-					redirect('editorCtl');
-					break;
-				case 2:
-					redirect('reviewerCtl');
-					break;
-				case 3:
-					redirect('makelaarCtl');
-					break;
-				default:
-					redirect('welcome');
-					break;
-			}
-		}
-	}
-
+	
+	
 	public function profile()
 	{
 		if (!$this->session->userdata('logged_in')) {
@@ -386,7 +255,7 @@ class AccountCtl extends CI_Controller
 
 				if ($this->upload->do_upload('photo')) {
 
-					$old_photo = $data['username']['photo'];
+					$old_photo = $session_data['username']['photo'];
 					if ($old_photo != 'default.jpg') {
 						unlink(FCPATH . 'photos/' . $old_photo);
 					}

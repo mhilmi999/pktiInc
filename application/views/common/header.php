@@ -45,7 +45,7 @@
                   </div>
                </div>
                <div class="col-md-3 col-lg-2">
-                  <div class="right_bt"><a class="bt_main" href="index.html">Masuk</a> </div>
+                  <div class="right_bt"><a class="bt_main" href="<?php echo base_url() . 'index.php/welcome/login'; ?>">Masuk</a> </div>
                </div>
             </div>
          </div>

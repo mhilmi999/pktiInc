@@ -26,17 +26,12 @@ class Welcome extends CI_Controller
 			return;
 		}
 		$this->load->view('common/header');
-		//$this->load->view('common/topmenu');
-		//$this->load->view('common/content');
 		$this->load->view('common/footer');
 	}
 
 	public function login()
 	{
-		$this->load->view('common/header');
-		//		$this->load->view('common/topmenu');
 		$this->load->view('login');
-		$this->load->view('common/footer');
 	}
 
 
@@ -50,13 +45,11 @@ class Welcome extends CI_Controller
 
 		switch ($session_data['id_grup']) {
 			case 1:
-				redirect('editorCtl');
+				redirect('PesertaCtl');
 				break;
 			case 2:
-				redirect('reviewerCtl');
+				redirect('PanitiaCtl');
 				break;
-			case 3:
-				redirect('makelaarCtl');
 				break;
 			default:
 				redirect('welcome');
@@ -68,10 +61,10 @@ class Welcome extends CI_Controller
 
 	public function signup()
 	{
-		$this->load->helper(array('form', 'url'));
-		$this->load->view('common/header');
+		//$this->load->helper(array('form', 'url'));
+		//$this->load->view('common/header');
 		$this->load->view('signup', array("error" => ""));
-		$this->load->view('common/footer');
+		//$this->load->view('common/footer');
 		return;
 	}
 }
