@@ -26,8 +26,8 @@ class Welcome extends CI_Controller
 			return;
 		}
 		$this->load->view('common/header');
-		$this->load->view('common/topmenu');
-		$this->load->view('common/content');
+		//$this->load->view('common/topmenu');
+		//$this->load->view('common/content');
 		$this->load->view('common/footer');
 	}
 

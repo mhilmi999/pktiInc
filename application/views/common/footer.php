@@ -1,89 +1,93 @@
-  <!-- Footer
- ================================================== -->
- <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="span4">
-          <div class="widget">
-            <h5>Browse pages</h5>
-            <ul class="regular">
-              <li><a href="#">Work for us</a></li>
-              <li><a href="<?php echo base_url() . 'index.php/welcome/signup'; ?>">Sign up form</a></li>
-              <li><a href="<?php echo base_url() . 'index.php/welcome/login'; ?>">Login page</a></li>
-              <li><a href="#">Editor Awards</a></li>
-              <li><a href="#">Reviewer Awards</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="span4">
-          <div class="widget">
-            <h5>Recent blog posts</h5>
-            <ul class="regular">
-              <li><a href="#">Article Formats</a></li>
-              <li><a href="#">Profile Image Format</a></li>
-              <li><a href="#">Rewarding</a></li>
-              <li><a href="#">Build Profile</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="span4">
-          <div class="widget">
-            <!-- logo -->
-            <a class="brand logo" href="index.html">
-							<img src="<?php echo base_url(); ?>assets/img/logo-dark.png" alt="">
-						</a>
-            <!-- end logo -->
-            <address>
-							<strong>eReview, Inc.</strong><br>
-							 Perpustakaan pusat lantai 6 ITS<br>
-							 Sukolilo, Surabaya<br>
-							<abbr title="Phone">P:</abbr> (123) 456-7890
-						</address>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="verybottom">
-      <div class="container">
-        <div class="row">
-          <div class="span6">
-            <p>
-              &copy; ereview - All right reserved
-            </p>
-          </div>
-          <div class="span6">
-            <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Serenity
-              -->
-              <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+     <!-- footer -->
+     <footer class="footer_style_2">
+         <div class="footer_top">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 margin_bottom_30">
+                     <div class="full width_9" style="margin-bottom:25px;"> <a href="index.html"><img class="img-responsive" width="250" src="<?= base_url();?>asset/images/logo.png" alt="#"></a> </div>
+                     <div class="full width_9">
+                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                     </div>
+                     <div class="full width_9">
+                        <p>the vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati..</p>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 margin_bottom_30">
+                     <div class="full">
+                        <div class="footer_blog_2 width_9">
+                           <h3>Twitter Feed</h3>
+                           <p><i class="fa fa-twitter"></i> Creative_Talent - 26 mins
+                              Te invitamos a seguir la cta. de WEntrepreneur_ ¡Atrévete! #Emprendimiento #PyMES #Economía #Bussines #Negocios https://t.co/Y7tZMmxGHn
+                           </p>
+                           <p><i class="fa fa-twitter"></i> Creative_Talent - 26 mins
+                              Te invitamos a seguir la cta. de WEntrepreneur_ ¡Atrévete! #Emprendimiento #PyMES #Economía #Bussines #Negocios https://t.co/Y7tZMmxGHn
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2 margin_bottom_30">
+                     <div class="full">
+                        <div class="footer_blog_2">
+                           <h3>Social</h3>
+                        </div>
+                     </div>
+                     <div class="full">
+                        <ul class="footer-links">
+                           <li><a href="#"><i class="fa fa-facebook"></i> 256 Likes</a></li>
+                           <li><a href="#"><i class="fa fa-github"></i> 57+ Projects</a></li>
+                           <li><a href="#"><i class="fa fa-twitter"></i> 1,258 Followers</a></li>
+                           <li><a href="#"><i class="fa fa-pinterest"></i> 2538+ Pins</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 margin_bottom_30">
+                     <div class="full">
+                        <div class="footer_blog_2 width_9">
+                           <h3>Blog</h3>
+                        </div>
+                        <div class="blog_post_footer">
+                           <div class="blog_post_img"> <img width="80" height="80" src="<?= base_url();?>asset/images/scr1.png" alt="#"> </div>
+                           <div class="blog_post_cont">
+                              <p class="date">July 22, 2015</p>
+                              <p class="post_head">Round and round like a carousel</p>
+                           </div>
+                        </div>
+                        <div class="blog_post_footer">
+                           <div class="blog_post_img"> <img width="80" height="80" src="<?= base_url();?>asset/images/scr2.png" alt="#"> </div>
+                           <div class="blog_post_cont">
+                              <p class="date">July 22, 2015</p>
+                              <p class="post_head">Round and round like a carousel</p>
+                           </div>
+                        </div>
+                        <div class="blog_post_footer">
+                           <div class="blog_post_img"> <img width="80" height="80" src="<?= base_url();?>asset/images/scr3.png" alt="#"> </div>
+                           <div class="blog_post_cont">
+                              <p class="date">July 22, 2015</p>
+                              <p class="post_head">Round and round like a carousel</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript Library Files -->
-  <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/jquery.easing.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/google-code-prettify/prettify.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/modernizr.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/jquery.elastislide.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/sequence/sequence.jquery-min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/sequence/setting.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/jquery.prettyPhoto.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/application.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/jquery.flexslider.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/hover/jquery-hover-effect.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/hover/setting.js"></script>
-
-  <!-- Template Custom JavaScript File -->
-  <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
-
-</body>
+         </div>
+         <!-- footer bottom -->
+         <div class="footer_bottom">
+            <p>Dessigned and developed by <strong>html.design</strong></p>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!--=========== js section ===========-->
+      <!-- jQuery (necessary for Bootstrap's JavaScript) -->
+      <script src="<?= base_url();?>asset/js/jquery.min.js"></script>
+      <script src="<?= base_url();?>asset/js/popper.min.js"></script>
+      <script src="<?= base_url();?>asset/js/bootstrap.min.js"></script>
+      <!-- wow animation -->
+      <script src="<?= base_url();?>asset/js/wow.js"></script>
+      <!-- custom js -->
+      <script src="<?= base_url();?>asset/js/custom.js"></script>
+      <!-- google map js -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+      <!-- end google map js -->
+   </body>
 </html>

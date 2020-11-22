@@ -1,65 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>eReview2</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- styles -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/css/docs.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/css/prettyPhoto.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/css/flexslider.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/css/sequence.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
-  <link href="<?php echo base_url(); ?>assets/color/default.css" rel="stylesheet">
-
-  <!-- fav and touch icons -->
-  <link rel="shortcut icon" href="assets/ico/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url(); ?>assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url(); ?>assets/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url(); ?>assets/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>assets/ico/apple-touch-icon-57-precomposed.png">
-
-  <!-- =======================================================
-    Theme Name: Serenity
-    Theme URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
-</head>
-
-<body>
-  <header>
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <!-- logo -->
-          <a class="brand logo" href="<?= base_url() . 'index.php'; ?>"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt=""></a>
-          <!-- end logo -->
-          <!-- top menu -->
-          <div class="navigation">
-            <nav>
-              <ul class="nav topnav">
-                <li class="dropdown active">
-                  <a href="<?= base_url() . 'index.php'; ?>">Home</a>
-                </li>
-                
-                <li>
-                  <a href="<?php echo base_url() . 'index.php/welcome/login'; ?> ">Login</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <!-- end menu -->
-        </div>
-      </div>
-    </div>
-  </header>
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>PKTI.inc | Home</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icons -->
+      <link rel="icon" href="<?= base_url();?>asset/images/fevicon/fevicon.png" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="<?= base_url();?>asset/css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="<?= base_url();?>asset/css/style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="<?= base_url();?>asset/css/responsive.css" />
+      <!-- colors css -->
+      <link rel="stylesheet" href="<?= base_url();?>asset/css/colors.css" />
+      <!-- wow animation css -->
+      <link rel="stylesheet" href="<?= base_url();?>asset/css/animate.css" />
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body id="default_theme" class="home_page1">
+      <!-- header -->
+      <header class="header header_style1">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-9 col-lg-10">
+                  <div class="logo"><a href="index.html"><img src="<?= base_url();?>asset/images/logo.png" alt="#" /></a></div>
+                  <div class="main_menu float-right">
+                     <div class="menu">
+                        <ul class="clearfix">
+                           <li class="active"><a href="<?= base_url();?>">Beranda</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3 col-lg-2">
+                  <div class="right_bt"><a class="bt_main" href="index.html">Masuk</a> </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <section id="banner_parallax" class="slide_banner1">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="full">
+                     <div class="slide_cont">
+                     <h2>Karya Tulismu Sudah Selesai?</h2>
+                        <p>Ayo Segera Unggah! dan <i>claim certificate</i>mu </p>
+                        <div class="full slide_bt"> <a class="white_bt bt_main" href="index.html">Upload KTI ku!</a> </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="full">
+                     <div class="slide_pc_img wow fadeInRight" data-wow-delay="1s" data-wow-duration="2s"> <img src="<?= base_url();?>asset/images/pc-banner.png" alt="#" /> </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end header -->
