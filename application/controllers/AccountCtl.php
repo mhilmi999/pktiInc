@@ -87,7 +87,7 @@ class AccountCtl extends CI_Controller
 			//			$peran= $this->account->getPeranUser($id_user);
 			switch ($users[0]['id_grup']) {
 				case 1:
-					redirect('PesertaCtl/index');
+					redirect('PesertaCtl');
 					break;
 				case 2:
 					redirect('PanitiaCtl');

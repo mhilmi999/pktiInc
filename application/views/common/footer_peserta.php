@@ -33,7 +33,7 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="<?php echo base_url() . 'index.php/AccountCtl/logout'; ?>">Logout</a>
         </div>
       </div>
     </div>
@@ -42,6 +42,15 @@
   <!-- Bootstrap core JavaScript-->
   <script src="<?= base_url(); ?>asset2/vendor/jquery/jquery.min.js"></script>
   <script src="<?= base_url(); ?>asset2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+      $('.custom-file-input').on('change', function() {
+          let fileName = $(this).val().split('\\').pop();
+          $(this).next('.custom-file-label').addClass("selected").html(fileName);
+      });
+
+  </script>
 
   <!-- Core plugin JavaScript-->
   <script src="<?= base_url(); ?>asset2/vendor/jquery-easing/jquery.easing.min.js"></script>
