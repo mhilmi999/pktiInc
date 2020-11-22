@@ -80,7 +80,8 @@ class AccountCtl extends CI_Controller
 				'id_grup' => $users[0]['id_grup'],
 				'nama_grup' => $users[0]['nama_grup'],
 				'currentgrup' => $users[0]['id_grup'],
-				'password'   => $users[0]['password']
+				'password'   => $users[0]['password'],
+				'photo' => $users[0]['photo']
 			);
 			$this->session->set_userdata('logged_in', $sess_array);
 			//ke halaman welcome page yang bersesuaian

@@ -35,7 +35,10 @@ class PesertaCtl extends CI_Controller
 			"nama_user" => $session_data['namalengkap'],
 			"current_role" => $session_data['nama_grup']
 		));
-		$this->load->view('peserta/index');
+		$this->load->view('peserta/index', array(
+			"nama_user" => $session_data['namalengkap'],
+			"current_role" => $session_data['nama_grup']
+		));
 		$this->load->view('common/footer_peserta');
 	}
 
@@ -91,7 +94,7 @@ class PesertaCtl extends CI_Controller
 		}
 		$session_data = $this->session->userdata('logged_in');
 
-		if ($session_data['nama_grup'] != 'editor') {
+		if ($session_data['nama_grup'] != 'peserta') {
 			redirect('welcome/redirecting');
 		}
 
@@ -101,36 +104,25 @@ class PesertaCtl extends CI_Controller
 
 		$this->form_validation->set_rules(
 			'judul',
-			'Title',
+			'Judul',
 			'trim|min_length[2]|max_length[128]|xss_clean'
 		);
-		$this->form_validation->set_rules(
-			'keywords',
-			'Keywords',
-			'trim|min_length[2]|max_length[128]|xss_clean'
-		);
-		$this->form_validation->set_rules(
-			'authors',
-			'Authors',
-			'trim|min_length[2]|max_length[128]|xss_clean'
-		);
-
 		$res = $this->form_validation->run();
 		if ($res == FALSE) {
 			$msg = validation_errors();
-			$this->load->view('common/header_editor', array(
+			$this->load->view('common/header_peserta', array(
 				"nama_user" => $session_data['namalengkap'],
 				"current_role" => $session_data['nama_grup']
 			));
 			//$this->load->view('common/topmenu');
-			$this->load->view('editor/add_task', $msg);
-			$this->load->view('common/footer');
+			$this->load->view('peserta/unggah', $msg);
+			$this->load->view('common/footer_peserta');
 			return FALSE;
 		}
 
 		$config['upload_path']          = './berkas';
 		$config['allowed_types']        = 'doc|docx|pdf';
-		$config['max_size']             = 2048;
+		$config['max_size']             = 10240;
 		//		$config['max_width']            = 150;
 		//		$config['max_height']           = 200;
 
@@ -141,83 +133,48 @@ class PesertaCtl extends CI_Controller
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload('userfile')) {   //gagal upload
 			$msg = array('error' => $this->upload->display_errors());
-			$this->load->view('common/header_editor', array(
+			$this->load->view('common/header_peserta', array(
 				"nama_user" => $session_data['namalengkap'],
 				"current_role" => $session_data['nama_grup']
 			));
-			//$this->load->view('common/topmenu');
-			$this->load->view('editor/add_task', $msg);
-			$this->load->view('common/footer');
+			$this->load->view('peserta/unggah', $msg);
+			$this->load->view('common/footer_peserta');
 			return;
 		}
 		//berhasil upload
 		$data = array('upload_data' => $this->upload->data());
+		
 		//tambahkan data ke database
-		$id_task = $this->task->insertNewTask($session_data['id_user'], $new_name);
-		//harga
-		$page = $this->input->post('page');
-		$price = $page * 10000;
-		$this->task->insertprice($price, $page);
+		$this->task->insertNewTask($session_data['id_user'], $new_name);
+		
 		//tampilkan halaman sukses
-		$this->load->view('common/header_editor', array(
+		$this->load->view('common/header_peserta', array(
 			"nama_user" => $session_data['namalengkap'],
 			"current_role" => $session_data['nama_grup']
 		));
-		$this->selectPotentialReviewer($id_task);
-		//$this->load->view('common/topmenu');
-		//$this->load->view('editor/add_success', array("error" => ""));
-		//$this->load->view('common/footer');
+
+		$this->load->view('peserta/unggahSukses', array("error" => ""));
+		$this->load->view('common/footer_peserta');
 		return;
 	}
 
-	public function selectPotentialReviewer($id_task = -1)
+	public function sertifikat()
 	{
 		if (!$this->session->userdata('logged_in')) {
 			redirect('welcome/index');
 		}
 		$session_data = $this->session->userdata('logged_in');
 
-		if ($session_data['nama_grup'] != 'editor') {
+		if ($session_data['nama_grup'] != 'peserta') {
 			redirect('welcome/redirecting');
 		}
-		$this->load->helper('form_helper');
-		$this->load->model(array('Task', 'Reviewer'));
-		$thetask = $this->Task->getTheTask($id_task);
-		$reviewers = $this->Reviewer->getAllReviewers();
-		$this->load->view('common/header_editor', array(
-			"nama_user" => $session_data['namalengkap'],
-			"current_role" => $session_data['nama_grup']
-		));
-		$this->load->view(
-			'editor/SelectPotentialReviewer',
-			array(
-				'task' => $thetask[0],
-				'reviewers' => $reviewers
-			)
-		);
-		//$this->load->view('common/content');
-		$this->load->view('common/footer');
-	}
-	public function addingPotential()
-	{
-		if (!$this->session->userdata('logged_in')) {
-			redirect('welcome/index');
-		}
-		$session_data = $this->session->userdata('logged_in');
 
-		if ($session_data['nama_grup'] != 'editor') {
-			redirect('welcome/redirecting');
-		}
-		$this->load->helper(array('form', 'url', 'security'));
-		$this->load->model('Reviewer');
-		//tambahkan data ke database
-		$this->Reviewer->getPotential();
-		//tampilkan halaman sukses
-		$this->load->view('common/header_editor', array(
+
+		$this->load->view('common/header_peserta', array(
 			"nama_user" => $session_data['namalengkap'],
 			"current_role" => $session_data['nama_grup']
 		));
-		$this->load->view('editor/add_success', array("error" => ""));
-		$this->load->view('common/footer');
+		$this->load->view('peserta/sertifikat');
+		$this->load->view('common/footer_peserta');
 	}
 }
