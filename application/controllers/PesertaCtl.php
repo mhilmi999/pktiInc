@@ -49,7 +49,7 @@ class PesertaCtl extends CI_Controller
 		}
 		$session_data = $this->session->userdata('logged_in');
 
-		if ($session_data['nama_grup'] != 'editor') {
+		if ($session_data['nama_grup'] != 'peserta') {
 			redirect('welcome/redirecting');
 		}
 
@@ -57,13 +57,13 @@ class PesertaCtl extends CI_Controller
 		//ambil task yang punya saya
 		$tasks = $this->task->getMyTask($session_data['id_user']);
 
-		$this->load->view('common/header_editor', array(
+		$this->load->view('common/header_peserta', array(
 			"nama_user" => $session_data['namalengkap'],
 			"current_role" => $session_data['nama_grup']
 		));
-		$this->load->view('editor/view_task', array("tasks" => $tasks));
+		$this->load->view('peserta/index', array("tasks" => $tasks));
 		//$this->load->view('common/content');
-		$this->load->view('common/footer');
+		$this->load->view('common/footer_peserta');
 	}
 
 	public function addTask()
